@@ -3,14 +3,16 @@
             https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
         xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        name="spring-boot-archetype">
-<!--    <requiredProperties>
+        name="archetype-spring-boot">
+<!--
+     <requiredProperties>
         <requiredProperty key="packageName">
             <defaultValue>${artifactId.replaceAll("-", " ").replaceAll(" ", "").replaceAll("_", "").toLowerCase()}</defaultValue>
         </requiredProperty>
-    </requiredProperties>-->
+    </requiredProperties>
+-->
     <modules>
-        <module id="core" dir="core" name="core">
+        <module id="${rootArtifactId}-core" dir="core" name="${rootArtifactId}-core">
             <fileSets>
                 <fileSet filtered="true" packaged="true">
                     <directory>src/main/java</directory>
@@ -20,12 +22,12 @@
                 </fileSet>
             </fileSets>
         </module>
-        <module id="service" dir="service" name="service">
+        <module id="${rootArtifactId}-service" dir="service" name="${rootArtifactId}-service">
             <fileSets>
                 <fileSet filtered="true" packaged="true">
                     <directory>src/main/java</directory>
                 </fileSet>
-                <fileSet>
+                <fileSet filtered="true">
                     <directory>src/main/resources</directory>
                 </fileSet>
                 <fileSet>

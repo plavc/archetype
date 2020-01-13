@@ -3,10 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>${artifactId}</artifactId>
-    <version>${version}</version>
     <packaging>jar</packaging>
-
-    <name>${artifactId}</name>
 
     <build>
         <plugins>
@@ -30,7 +27,7 @@
         <!-- Modules -->
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>core</artifactId>
+            <artifactId>${rootArtifactId}-core</artifactId>
         </dependency>
 
         <!-- Testing -->

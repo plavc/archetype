@@ -9,6 +9,11 @@
  
     <name>${artifactId}</name>
 
+    <modules>
+        <module>${artifactId}-core</module>
+        <module>${artifactId}-service</module>
+    </modules>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -73,12 +78,12 @@
             <!-- Modules -->
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>core</artifactId>
+                <artifactId>${rootArtifactId}-core</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>service</artifactId>
+                <artifactId>${rootArtifactId}-service</artifactId>
                 <version>${version}</version>
             </dependency>
         </dependencies>
