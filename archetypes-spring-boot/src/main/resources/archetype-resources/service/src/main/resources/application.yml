@@ -1,0 +1,19 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+logging:
+  level:
+    ${package}: info
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health"
+        exclude:
+  endpoint:
+    health:
+      show-details: always

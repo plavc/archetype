@@ -1,0 +1,49 @@
+<archetype-descriptor
+        xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0
+            https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+        xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        name="spring-boot-archetype">
+<!--    <requiredProperties>
+        <requiredProperty key="packageName">
+            <defaultValue>${artifactId.replaceAll("-", " ").replaceAll(" ", "").replaceAll("_", "").toLowerCase()}</defaultValue>
+        </requiredProperty>
+    </requiredProperties>-->
+    <modules>
+        <module id="core" dir="core" name="core">
+            <fileSets>
+                <fileSet filtered="true" packaged="true">
+                    <directory>src/main/java</directory>
+                </fileSet>
+                <fileSet>
+                    <directory>src/test/java</directory>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="service" dir="service" name="service">
+            <fileSets>
+                <fileSet filtered="true" packaged="true">
+                    <directory>src/main/java</directory>
+                </fileSet>
+                <fileSet>
+                    <directory>src/main/resources</directory>
+                </fileSet>
+                <fileSet>
+                    <directory>src/test/java</directory>
+                </fileSet>
+                <fileSet>
+                    <directory>src/test/resources</directory>
+                </fileSet>
+            </fileSets>
+        </module>
+    </modules>
+    <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory/>
+            <includes>
+                <include>Dockerfile</include>
+                <include>.gitignore</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>

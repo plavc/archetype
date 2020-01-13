@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="DEFAULT_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [${hostName}] [%X{traceId},%X{spanId},%X{spanExportable}] %5p --- [%15.15t] %-40.40c{1.} : %m %notEmpty{assetId=%X{assetId} }%n%ex</Property>
+        <Property name="COLORED_PATTERN">%highlight{%d{HH:mm:ss.SSS} %highlight{%5p} [%blue{%15.15t}] -- %yellow{%C{1.}} : %msg%n%ex}{FATAL=red blink, ERROR=red bold, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${DEFAULT_PATTERN}" />
+        </Console>
+        <Console name="Console-Colored" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${COLORED_PATTERN}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
