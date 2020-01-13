@@ -1,6 +1,7 @@
-# Spring Boot Archetype
+# Maven Archetypes
 
+1. Spring Boot Archetype
 
-
-## Sources
+---
+### Sources
 - https://maven.apache.org/guides/mini/guide-creating-archetypes.html
